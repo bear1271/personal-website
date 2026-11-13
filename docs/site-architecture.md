@@ -1,17 +1,55 @@
 # Site architecture
 
-## Tracked source
+A static site built by plain Node scripts (no npm dependencies) and deployed to GitHub Pages. English and Chinese pages are produced by the same templates; every word of copy lives in `content/`, never in the scripts.
 
-- `content/` — public profile and research source data.
-- `public/` — files copied unchanged into the static site, including `CNAME`, styles, icons, and the generated CV PDF.
-- `scripts/` — build, validation, preview, and CV-generation tools.
-- `.github/workflows/` — GitHub Pages build and deployment workflow.
+## Layout
 
-## Generated and local-only directories
+```
+content/              everything the site says
+  profile.json          identity, research questions, training, projects, experience
+  ui.json               interface strings (labels, headings, status wording), by dotted key
+  site.json             production origin, navigation, footer links, retired URLs
+  pages/                long-form copy: for-agents.json (blocks), llms.template.txt
+  licensing.json        copyright page, one policy per language
+  notes-categories.json Notes subjects
+  public-note-editions.json   reviewed reading editions (site-hosted or Drive)
+  poetics/              full text of the Poetics handouts
+public/               copied into the site unchanged: style.css, images, CNAME, cv.pdf, note PDFs/DOCX
+scripts/
+  build.mjs             orchestrator: load content, collect pages, write dist/
+  check.mjs             validates dist/ against the rules in AGENTS.md
+  serve.mjs             local preview of dist/
+  make_cv.py            generates public/cv.pdf (needs requirements.txt)
+  lib/                  html (auto-escaping templates), i18n, context, layout, blocks, projects, fragments, discovery
+  pages/                one module per page type (home, research, about, leadership, notes, poetics, agents, copyright)
+```
 
-- `dist/` — the complete deployable static site. It is generated and ignored by Git; GitHub Actions uploads this directory to GitHub Pages.
-- `local/` — private drafts, planning notes, QA material, and references. It is ignored by Git and never deployed.
+## Content model
+
+- **Translatable text** is a leaf object, `{ "en": "…", "zh": "…" }`. Plain strings are language-neutral (names, course codes, URLs) and shown as-is. A Chinese text that is missing falls back to English and is listed at the end of `npm run build`.
+- **Interface strings** live in `content/ui.json` and are used as `t("section.key")`. A missing key, or a key without both languages, fails the build.
+- **Project status is data.** `topic`, `mentor` and `abstract` on an in-progress paper are `null` until decided; the wording derived from them (detail-page rows and notices, card tags, status lists in Markdown, `llms.txt` and the CV) updates by itself when you set the field. The record's hand-written text (`status`, `description`, `availability`) does not, so edit those in the same record; `npm run check` fails if they still claim something is pending after the field is set.
+- `experience[].showOnLeadership` chooses which roles appear on the Leadership page.
+- Machine-written manifests (`public-note-editions.json`, `poetics/*.json`) keep the snake_case keys produced by the private tooling in `local/`; hand-edited content uses camelCase.
+
+## Build flow
+
+`build.mjs` loads all content once (`lib/context.mjs`), asks each module in `pages/` for its page records, then renders them:
+
+1. A page record is `{ lang, route, base, title, description, active, body, md, schema? }`. `base` is the English route; the Chinese twin is `/zh` + base, and the language switch, `hreflang` links and canonical URL are derived from it.
+2. `lib/layout.mjs` wraps `body` in the shell (head metadata, header, navigation, footer) and writes `index.html`; `md` becomes the `index.md` companion.
+3. Modules receive a per-language *view* (`view.t`, `view.p`, `view.r`, …), so templates never branch on language.
+4. Discovery files (`profile.json`, `research.json`, `llms.txt`, `sitemap.xml`, `robots.txt`) are generated in `lib/discovery.mjs`. The public JSON keeps its English-only shape.
+5. Retired URLs listed in `site.json` become small redirect stubs (GitHub Pages cannot send HTTP redirects).
+
+Templates use the `html` tagged template in `lib/html.mjs`: interpolated values are escaped unless they are `raw(...)` or another `html` result.
+
+## Checks
+
+`npm run check` validates the built site rather than today's wording: one `<h1>` and a description on every page; canonical URLs; a working language twin, switch and `hreflang` for every page; link and anchor integrity; no inline styles or runtime JavaScript; every Markdown companion; sitemap parity; status wording that matches `topic`/`mentor`/`abstract` in the content; course work never labelled a publication; all notes in the manifest (site-hosted and Drive) listed on the right pages with their files; no orphan files; no private-material patterns; and a CV whose edition date matches the profile.
 
 ## Deployment
 
-GitHub Actions builds the site from `main`, uploads `dist/`, and deploys it through GitHub Pages. `public/CNAME` makes `sirunwang.com` part of that artifact. The production URL is `https://sirunwang.com/`; no server-side runtime is used.
+GitHub Actions runs `npm run verify` (CV, build, check), uploads `dist/` and deploys it through GitHub Pages from `main`. Pull requests run the same build and checks without deploying. The workflow pins Node and the CV dependency. `public/CNAME` keeps `sirunwang.com` in the artifact; the production URL is `https://sirunwang.com/` and no server-side runtime is used.
+
+`dist/` (generated) and `local/` (private drafts, QA, source material) are ignored by Git and never committed.

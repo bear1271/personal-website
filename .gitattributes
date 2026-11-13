@@ -1,0 +1,8 @@
+# Normalize text files, but never rewrite binaries (a CRLF rewrite corrupts PDFs).
+* text=auto
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.docx binary
+*.ico binary

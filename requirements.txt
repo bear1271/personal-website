@@ -1,0 +1,2 @@
+# Build-time dependency for scripts/make_cv.py (the site itself needs no runtime packages).
+reportlab==5.1.0

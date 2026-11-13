@@ -1,30 +1,27 @@
 {
   "name": "Green (Sirun) Wang",
   "shortName": "Green Wang",
-  "alternateNames": [
-    "Sirun Wang",
-    "Green Wang"
-  ],
-  "institution": "University of California, Berkeley",
-  "role": "Undergraduate",
+  "alternateNames": ["Sirun Wang", "Green Wang"],
+  "institution": { "en": "University of California, Berkeley", "zh": "加州大学伯克利分校" },
+  "institutionShort": "UC Berkeley",
+  "role": { "en": "Undergraduate", "zh": "本科生" },
   "studies": [
-    "Political Economy",
-    "Applied Mathematics"
+    { "en": "Political Economy", "zh": "政治经济" },
+    { "en": "Applied Mathematics", "zh": "应用数学" }
   ],
   "email": "greenw@berkeley.edu",
   "updated": "2026-10-29",
-  "bio": "I am an undergraduate at UC Berkeley studying political economy and applied mathematics. I study how institutions organize collective production and shape how people understand the sources of its success.",
-  "approach": "My current work explores two related questions: how institutions develop productive capacity, and how they shape people's interpretations of that capacity. I am especially interested in how people attribute contributions, judge whether a leader or organization is replaceable, and form beliefs about alternatives they cannot directly observe. I am learning to use formal models to make these mechanisms precise, while taking historical settings and the limits of each representation seriously. How institutions reshape people's standards of value remains a longer-term question.",
+  "portraitAlt": { "en": "Portrait of Green (Sirun) Wang", "zh": "王思润（Green Wang）的肖像" },
+  "bio": { "en": "I am an undergraduate at UC Berkeley studying political economy and applied mathematics. I study how institutions organize collective production and shape how people understand the sources of its success.", "zh": "加州大学伯克利分校本科生，主修政治经济与应用数学。关注制度如何组织共同生产，以及人们如何理解组织成果的来源。" },
+  "approach": { "en": "My current work explores two related questions: how institutions develop productive capacity, and how they shape people's interpretations of that capacity. I am especially interested in how people attribute contributions, judge whether a leader or organization is replaceable, and form beliefs about alternatives they cannot directly observe. I am learning to use formal models to make these mechanisms precise, while taking historical settings and the limits of each representation seriously. How institutions reshape people's standards of value remains a longer-term question.", "zh": "我围绕两个相关问题展开工作：制度如何形成生产能力，以及制度如何影响人们对这种能力的解释。\n\n我想弄清的是：人们如何归因不同个体的贡献；如何判断一位领导者、一个组织是否可被替代；以及，当替代方案无从直接观察时，信念从何而来。\n\n我用形式模型厘清机制，而将历史情境与模型表述的边界视为同样严肃的约束。\n\n再退一步，我想问的是：制度何时改变人们的价值尺度。" },
   "interests": [
-    "Political economy of institutions",
-    "Productive and interpretive capacity",
-    "Belief formation and formal theory"
+    { "en": "Political economy of institutions", "zh": "制度政治经济学" },
+    { "en": "Productive and interpretive capacity", "zh": "生产能力与解释能力" },
+    { "en": "Belief formation and formal theory", "zh": "信念形成与形式理论" }
   ],
-  "researchLead": "How do institutions build productive capacity and shape how people understand it?",
-  "currentFocus": "Productive capacity, interpretive capacity, and beliefs about institutional alternatives.",
-  "contactTopics": "institutions, belief formation, and formal political economy",
-  "bioZh": "加州大学伯克利分校本科生，主修政治经济与应用数学。关注制度如何组织共同生产，以及人们如何理解组织成果的来源。",
-  "approachZh": "我围绕两个相关问题展开工作：制度如何形成生产能力，以及制度如何影响人们对这种能力的解释。\n\n我想弄清的是：人们如何归因不同个体的贡献；如何判断一位领导者、一个组织是否可被替代；以及，当替代方案无从直接观察时，信念从何而来。\n\n我用形式模型厘清机制，而将历史情境与模型表述的边界视为同样严肃的约束。\n\n再退一步，我想问的是：制度何时改变人们的价值尺度。",
+  "researchLead": { "en": "How do institutions build productive capacity and shape how people understand it?", "zh": "制度如何形成生产能力，又如何影响人们对这种能力的理解？" },
+  "currentFocus": { "en": "Productive capacity, interpretive capacity, and beliefs about institutional alternatives.", "zh": "生产能力、解释能力，以及人们如何判断看不见的制度替代方案。" },
+  "contactNote": { "en": "I welcome conversations about institutions, belief formation, and formal political economy.", "zh": "欢迎就制度、信念形成与形式政治经济学交流。" },
   "workingHypothesis": {
     "title": "Monetary valuation and preferences",
     "status": "Exploratory interest; not a finding or a confirmed course-paper topic",
@@ -34,39 +31,41 @@
   "ongoingProjects": [
     {
       "id": "formal-theory",
-      "title": "Formal theory",
-      "titleStatus": "Area label; paper title not yet determined",
-      "type": "PhD-level course paper",
+      "title": { "en": "Formal theory", "zh": "形式理论" },
+      "titleStatus": { "en": "Area label; paper title not yet determined", "zh": "领域标签；论文题目尚未确定" },
+      "type": { "en": "PhD-level course paper", "zh": "课程论文" },
       "period": "Fall 2026",
-      "status": "Planned; not yet started",
+      "status": { "en": "Planned; not yet started", "zh": "计划中；尚未开始" },
       "topic": null,
       "mentor": null,
-      "publicationStatus": "Not a publication",
-      "availability": "Coming soon; paper not yet started and no abstract or manuscript available.",
+      "abstract": null,
+      "publicationStatus": { "en": "Not a publication", "zh": "不是已发表成果" },
+      "availability": { "en": "Coming soon; paper not yet started and no abstract or manuscript available.", "zh": "即将更新；论文尚未开始，暂无摘要或手稿。" },
       "courseCode": "POLSCI 232B",
       "courseTitle": "Formal Models of Political Science",
-      "description": "A planned PhD-level course paper in formal theory. The topic and mentor have not yet been determined.",
-      "area": "Formal theory"
+      "description": { "en": "A planned PhD-level course paper in formal theory. The topic and mentor have not yet been determined.", "zh": "计划中的 PhD-level 课程论文，方向为形式理论。题目与指导教师尚未确定。" },
+      "area": { "en": "Formal theory", "zh": "形式理论" }
     },
     {
       "id": "capitalism-institutions",
-      "title": "Economic institutions of capitalism",
-      "titleStatus": "Area label; paper title not yet determined",
-      "type": "PhD-level course paper",
+      "title": { "en": "Economic institutions of capitalism", "zh": "资本主义的经济制度" },
+      "titleStatus": { "en": "Area label; paper title not yet determined", "zh": "领域标签；论文题目尚未确定" },
+      "type": { "en": "PhD-level course paper", "zh": "课程论文" },
       "period": "Fall 2026",
-      "status": "Planned; not yet started",
+      "status": { "en": "Planned; not yet started", "zh": "计划中；尚未开始" },
       "topic": null,
       "mentor": null,
-      "publicationStatus": "Not a publication",
-      "availability": "Coming soon; paper not yet started and no abstract or manuscript available.",
+      "abstract": null,
+      "publicationStatus": { "en": "Not a publication", "zh": "不是已发表成果" },
+      "availability": { "en": "Coming soon; paper not yet started and no abstract or manuscript available.", "zh": "即将更新；论文尚未开始，暂无摘要或手稿。" },
       "courseCode": "PHDBA 279PD",
       "courseTitle": "The Economic Institutions of Capitalism in Historical Perspective",
-      "description": "A planned PhD-level course paper on the economic institutions of capitalism. The topic and mentor have not yet been determined.",
-      "area": "Institutions of capitalism"
+      "description": { "en": "A planned PhD-level course paper on the economic institutions of capitalism. The topic and mentor have not yet been determined.", "zh": "计划中的 PhD-level 课程论文，主题为资本主义的经济制度。题目与指导教师尚未确定。" },
+      "area": { "en": "Institutions of capitalism", "zh": "资本主义的制度" }
     }
   ],
   "training": {
-    "summary": "My coursework includes quantitative microeconomics, probability, and mathematics, alongside political economy, world history, and Chinese literary history. This fall, I am taking courses in formal models of political science and the economic institutions of capitalism, with course papers planned in both.",
+    "summary": { "en": "My coursework includes quantitative microeconomics, probability, and mathematics, alongside political economy, world history, and Chinese literary history. This fall, I am taking courses in formal models of political science and the economic institutions of capitalism, with course papers planned in both.", "zh": "已修课程覆盖定量微观经济学、概率、多元微积分、离散数学，以及古典政治经济学、世界史和中国文学史。当前课程还包括计量经济学与分析导论。" },
     "completed": [
       {
         "code": "ECON 101A",
@@ -139,58 +138,58 @@
   },
   "questions": [
     {
-      "title": "Productive capacity",
-      "question": "How do institutions combine individual skills and resources into capacities that persist beyond particular people?",
+      "title": { "en": "Productive capacity", "zh": "生产能力" },
+      "question": { "en": "How do institutions combine individual skills and resources into capacities that persist beyond particular people?", "zh": "制度如何把个人的技能与资源组织成可延续的共同能力？" },
       "context": "Organization · Institutional change"
     },
     {
-      "title": "Interpretive capacity",
-      "question": "How do institutions shape what people can observe and how they attribute the results of collective work?",
+      "title": { "en": "Interpretive capacity", "zh": "解释能力" },
+      "question": { "en": "How do institutions shape what people can observe and how they attribute the results of collective work?", "zh": "制度如何影响人们能观察到什么，以及如何归因共同工作的成果？" },
       "context": "Information · Attribution · Beliefs"
     },
     {
-      "title": "Institutional alternatives",
-      "question": "How do people judge whether an incumbent is replaceable when they cannot observe the outcome under an alternative arrangement?",
+      "title": { "en": "Institutional alternatives", "zh": "制度替代方案" },
+      "question": { "en": "How do people judge whether an incumbent is replaceable when they cannot observe the outcome under an alternative arrangement?", "zh": "当替代安排的结果无法直接观察，人们如何判断现任是否可替代？" },
       "context": "Counterfactuals · Formal theory"
     }
   ],
   "projects": [
     {
       "id": "bangladesh-1991",
-      "title": "The 1991 Neoliberal Shift in Bangladesh",
-      "shortTitle": "Institutional change in Bangladesh",
-      "type": "Course research",
+      "title": { "en": "The 1991 Neoliberal Shift in Bangladesh", "zh": "孟加拉国 1991 年的新自由主义转向" },
+      "shortTitle": { "en": "Institutional change in Bangladesh", "zh": "孟加拉国 1991 年的政策转向" },
+      "type": { "en": "Course research", "zh": "课程研究" },
       "period": "Spring 2026",
       "startDate": "2026-01",
       "endDate": "2026-05",
-      "publicationStatus": "Not listed as a publication",
-      "availability": "Project summary only; manuscript not included in this edition.",
-      "area": "Development & political economy",
-      "description": "A course research project examining the drivers of Bangladesh’s transition toward market-oriented policy and the role of party-state institutions.",
-      "question": "What drove Bangladesh’s shift toward market-oriented policy in 1991?",
+      "publicationStatus": { "en": "Not listed as a publication", "zh": "不列为学术发表" },
+      "availability": { "en": "Project summary only; manuscript not included in this edition.", "zh": "网站仅提供项目摘要，未提供论文全文。" },
+      "area": { "en": "Development & political economy", "zh": "发展与政治经济" },
+      "description": { "en": "A course research project examining the drivers of Bangladesh’s transition toward market-oriented policy and the role of party-state institutions.", "zh": "关注市场导向政策转型及政党—国家制度。" },
+      "question": { "en": "What drove Bangladesh’s shift toward market-oriented policy in 1991?", "zh": "什么推动了孟加拉国在 1991 年转向市场导向政策？" },
       "context": "Development and Globalization, UC Berkeley",
       "instructor": "Edwin Lin",
-      "scope": "Policy transition and party-state institutions in Bangladesh.",
-      "sourceNote": "This summary is based on the project entry in my research CV. The full paper and its findings are not presented here.",
+      "scope": { "en": "Policy transition and party-state institutions in Bangladesh.", "zh": "孟加拉国的政策转型与政党—国家制度。" },
+      "sourceNote": { "en": "This summary is based on the project entry in my research CV. The full paper and its findings are not presented here.", "zh": "本摘要依据我的研究简历中的项目条目撰写；论文全文及其结论未在此呈现。" },
       "selectionStatus": "Earlier coursework; not representative of current research interests"
     },
     {
       "id": "manila-trade",
-      "title": "Chinese–Spanish Trade in Manila, 1589–1603",
-      "shortTitle": "Trade and exchange in early-modern Manila",
-      "type": "Course research",
+      "title": { "en": "Chinese–Spanish Trade in Manila, 1589–1603", "zh": "1589—1603 年马尼拉的中国—西班牙贸易" },
+      "shortTitle": { "en": "Trade and exchange in early-modern Manila", "zh": "近代早期马尼拉的中西贸易" },
+      "type": { "en": "Course research", "zh": "课程研究" },
       "period": "Spring 2026",
       "startDate": "2026-01",
       "endDate": "2026-05",
-      "publicationStatus": "Not listed as a publication",
-      "availability": "Project summary only; manuscript not included in this edition.",
-      "area": "Economic history",
-      "description": "An economic-history review of Chinese–Spanish maritime trade in Manila, approaching early-modern exchange in Asia from non-Eurocentric perspectives.",
-      "question": "How can Chinese–Spanish trade in Manila be understood from non-Eurocentric perspectives?",
+      "publicationStatus": { "en": "Not listed as a publication", "zh": "不列为学术发表" },
+      "availability": { "en": "Project summary only; manuscript not included in this edition.", "zh": "网站仅提供项目摘要，未提供论文全文。" },
+      "area": { "en": "Economic history", "zh": "经济史" },
+      "description": { "en": "An economic-history review of Chinese–Spanish maritime trade in Manila, approaching early-modern exchange in Asia from non-Eurocentric perspectives.", "zh": "从非欧洲中心的视角理解近代早期亚洲海上贸易。" },
+      "question": { "en": "How can Chinese–Spanish trade in Manila be understood from non-Eurocentric perspectives?", "zh": "怎样从非欧洲中心的视角理解 1589—1603 年马尼拉的中西贸易？" },
       "context": "Survey of World History, UC Berkeley",
       "instructor": "Devin Leigh",
-      "scope": "Maritime trade and exchange in Asia, focusing on Manila between 1589 and 1603.",
-      "sourceNote": "This summary is based on the project entry in my research CV. The full paper and its findings are not presented here.",
+      "scope": { "en": "Maritime trade and exchange in Asia, focusing on Manila between 1589 and 1603.", "zh": "亚洲的海上贸易与交流，聚焦 1589—1603 年间的马尼拉。" },
+      "sourceNote": { "en": "This summary is based on the project entry in my research CV. The full paper and its findings are not presented here.", "zh": "本摘要依据我的研究简历中的项目条目撰写；论文全文及其结论未在此呈现。" },
       "selectionStatus": "Earlier coursework; not representative of current research interests"
     }
   ],
@@ -213,7 +212,8 @@
       "endDate": null,
       "period": "June 2026 – present",
       "url": "https://datong.studentorg.berkeley.edu/",
-      "detail": "Previously a member, September 2025 – June 2026."
+      "detail": { "en": "Previously a member, September 2025 – June 2026.", "zh": "此前为成员（2025 年 9 月 – 2026 年 6 月）。" },
+      "showOnLeadership": true
     },
     {
       "organization": "Berkeley Political Economy Journal",
@@ -222,7 +222,8 @@
       "endDate": null,
       "period": "March 2026 – present",
       "url": "https://pesaberkeley.weebly.com/bpej-board.html",
-      "detail": "Review of undergraduate research submissions and their argumentation, evidence, and methods."
+      "detail": { "en": "Review of undergraduate research submissions and their argumentation, evidence, and methods.", "zh": "审阅本科生研究投稿的论证、证据与方法。" },
+      "showOnLeadership": true
     },
     {
       "organization": "Berkeley Undergraduate Journal",
@@ -231,7 +232,8 @@
       "endDate": "2026-06",
       "period": "August 2025 – June 2026",
       "url": "https://buj.studentorg.berkeley.edu/",
-      "detail": "Peer review and substantive editing of undergraduate research."
+      "detail": { "en": "Peer review and substantive editing of undergraduate research.", "zh": "对本科生研究进行同行评审与实质性编辑。" },
+      "showOnLeadership": false
     }
   ]
 }

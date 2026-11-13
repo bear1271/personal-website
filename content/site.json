@@ -1,0 +1,20 @@
+{
+  "origin": "https://sirunwang.com",
+  "basePath": "/",
+  "copyrightYear": 2026,
+  "nav": [
+    { "id": "home", "route": "/" },
+    { "id": "research", "route": "/research/" },
+    { "id": "notes", "route": "/notes/" },
+    { "id": "leadership", "route": "/leadership/" },
+    { "id": "about", "route": "/about/" }
+  ],
+  "footer": [
+    { "id": "copyright", "route": "/copyright/", "localized": true },
+    { "id": "zhAbout", "route": "/zh/about/", "localized": false },
+    { "id": "agents", "route": "/for-agents/", "localized": true }
+  ],
+  "redirects": [
+    { "from": "/about/zh/", "to": "/zh/about/", "lang": "zh" }
+  ]
+}

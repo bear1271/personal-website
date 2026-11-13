@@ -1,0 +1,24 @@
+# {name}
+
+> {tagline}
+
+{bio}
+
+In-progress items are PhD-level course papers, listed below with their current status. Earlier course projects have summaries available. None is listed as a publication. Notes provides full reading editions on this site and verified external reading links. Content updated {updated}; this is an edition date.
+
+## Profile
+- [About and CV]({url:/about/index.md}): Biography, education, selected course work and contact.
+- [Structured profile]({url:/profile.json}): Public identity and interests.
+
+## In progress
+{inProgress}
+
+## Previous course research
+{courseResearch}
+- [Research metadata]({url:/research.json}): Project types, dates and availability.
+
+## Notes
+- [Reading notes]({url:/notes/index.md}): Full reading editions and PDF downloads; not research papers.
+
+## About this site
+- [Agent guide]({url:/for-agents/index.md}): Reading conventions and scope.

@@ -2,9 +2,14 @@
   "name": "green-wang-personal-site",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "cv": "python scripts/make_cv.py",
     "build": "node scripts/build.mjs",
-    "start": "node scripts/serve.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "verify": "npm run cv && npm run build && npm run check",
+    "start": "node scripts/serve.mjs"
   }
 }

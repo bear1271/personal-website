@@ -1,0 +1,63 @@
+{
+  "en": {
+    "title": "For agents",
+    "mdTitle": "Agent guide",
+    "eyebrow": "Plain text & structured information",
+    "lead": "A small, readable index of this website.",
+    "blocks": [
+      { "p": "The HTML pages contain their full text without requiring JavaScript. Equivalent Markdown pages and structured records are linked below." },
+      {
+        "table": {
+          "head": ["Resource", "Contents"],
+          "rows": [
+            ["[llms.txt](/llms.txt)", "A curated guide to this site"],
+            ["[profile.json](/profile.json)", "Public identity, studies, interests and contact"],
+            ["[research.json](/research.json)", "Project summaries, types and availability"],
+            ["[index.md](/index.md)", "Homepage as Markdown"],
+            ["[sitemap.xml](/sitemap.xml)", "Page addresses"]
+          ]
+        }
+      },
+      { "h2": "Reading the record accurately" },
+      { "p": "{name} is an undergraduate at {institutionShort}, studying {studies}. Research interests describe topics of inquiry, not a claim of established expertise." },
+      { "projects": "inProgress" },
+      { "projects": "courseResearch" },
+      { "p": "Full manuscripts are not hosted here, and these entries should not be described as peer-reviewed publications. Notes provides full reading editions on this site and verified external reading links, not publications or research findings." },
+      { "p": "The update date indicates when this edition was prepared. It is not a claim that all past experiences were independently reverified on that date." },
+      { "h2": "Scope" },
+      { "p": "These files describe only the public content of this site. No private CV source files, personal identifiers, or application records are included." },
+      { "p": "The [llms.txt convention](https://llmstxt.org/) provides an optional reading guide. It does not control an agent’s access permissions or guarantee how an agent uses this website." }
+    ]
+  },
+  "zh": {
+    "title": "站点资料",
+    "mdTitle": "站点资料",
+    "eyebrow": "纯文本与结构化资料",
+    "lead": "给希望准确读取本站内容的读者与工具。",
+    "description": "站点公开内容与阅读边界",
+    "blocks": [
+      { "p": "所有主要页面都无需 JavaScript 即可阅读。对应的 Markdown 页面与结构化数据见下表。" },
+      {
+        "table": {
+          "head": ["资料", "内容"],
+          "rows": [
+            ["[llms.txt](/llms.txt)", "本站的内容导览"],
+            ["[profile.json](/profile.json)", "公开身份、学习方向、研究兴趣与联系方式"],
+            ["[research.json](/research.json)", "项目摘要、类型与可获得性"],
+            ["[index.md](/zh/index.md)", "Markdown 版首页"],
+            ["[sitemap.xml](/sitemap.xml)", "页面地址"]
+          ]
+        }
+      },
+      { "h2": "如何准确理解本站记录" },
+      { "p": "{name} 是{institution}本科生，主修{studies}。研究兴趣是问题方向，不代表已经建立的专长。" },
+      { "projects": "inProgress" },
+      { "projects": "courseResearch" },
+      { "p": "课程论文与课程研究均不列为已发表论文，论文全文未在本站发布，不应被描述为经过同行评审的出版物。笔记提供本站的完整阅读版及已核验的外部阅读链接，不属于出版物或研究结论。" },
+      { "p": "更新日期表示本版本的编制时间，并不表示所有过往经历均已在该日期重新核实。" },
+      { "h2": "范围" },
+      { "p": "本站只包含公开内容，不发布私人笔记原件、课程材料原件或申请资料。" },
+      { "p": "[llms.txt 约定](https://llmstxt.org/)提供可选的阅读指南，它不控制智能体的访问权限，也不保证智能体如何使用本站。" }
+    ]
+  }
+}

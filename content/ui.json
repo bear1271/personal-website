@@ -1,0 +1,166 @@
+{
+  "layout": {
+    "switchLabel": { "en": "阅读此页的中文版", "zh": "Read this page in English" },
+    "switchText": { "en": "中文", "zh": "EN" },
+    "skip": { "en": "Skip to content", "zh": "跳转到正文" },
+    "navLabel": { "en": "Main navigation", "zh": "主导航" },
+    "updated": { "en": "Updated", "zh": "更新于" },
+    "email": { "en": "Email", "zh": "Email" }
+  },
+  "nav": {
+    "home": { "en": "Home", "zh": "首页" },
+    "research": { "en": "Research", "zh": "研究" },
+    "notes": { "en": "Notes", "zh": "笔记" },
+    "leadership": { "en": "Leadership", "zh": "组织与服务" },
+    "about": { "en": "About / CV", "zh": "关于 / 简历" }
+  },
+  "footer": {
+    "copyright": { "en": "Copyright & Licensing", "zh": "版权与许可" },
+    "zhAbout": { "en": "中文简介", "zh": "关于我" },
+    "agents": { "en": "Site data", "zh": "站点资料" }
+  },
+  "list": {
+    "and": { "en": " and ", "zh": "与" }
+  },
+  "md": {
+    "author": { "en": "Author", "zh": "作者" },
+    "availability": { "en": "Availability", "zh": "可获得性" },
+    "courseContext": { "en": "Course context", "zh": "课程背景" },
+    "question": { "en": "Question", "zh": "研究问题" },
+    "agents": { "en": "For agents", "zh": "站点资料" }
+  },
+  "home": {
+    "title": { "en": "Political economy & applied mathematics", "zh": "首页" },
+    "explore": { "en": "Explore research", "zh": "研究方向" },
+    "about": { "en": "About & CV", "zh": "关于我与简历" },
+    "email": { "en": "Email", "zh": "联系" },
+    "inProgress": { "en": "In progress", "zh": "正在进行" },
+    "allResearch": { "en": "All research", "zh": "查看研究" },
+    "interests": { "en": "Current interests", "zh": "目前关注" },
+    "notes": { "en": "Reading notes", "zh": "阅读笔记" },
+    "contactHeading": { "en": "Start a conversation.", "zh": "欢迎交流" },
+    "contact": { "en": "Contact", "zh": "联系" },
+    "lens": {
+      "label": { "en": "Current lines of inquiry", "zh": "目前的研究问题" },
+      "title": { "en": "Current questions", "zh": "目前的问题" },
+      "first": { "en": "What can an institution make possible?", "zh": "制度如何形成生产能力？" },
+      "second": { "en": "How does it shape what people think made that possible?", "zh": "人们又如何理解这种能力的来源？" },
+      "captionA": { "en": "Productive capacity", "zh": "生产能力" },
+      "captionB": { "en": "Interpretive capacity", "zh": "解释能力" }
+    }
+  },
+  "research": {
+    "eyebrow": { "en": "Questions, contexts & work", "zh": "问题、情境与研究" },
+    "inProgress": { "en": "In progress", "zh": "正在进行的课程论文" },
+    "selected": { "en": "Selected course research", "zh": "此前的课程研究" },
+    "courseNote": { "en": "These entries describe course research. Full manuscripts are not included in this edition.", "zh": "以上条目为课程研究，本版本未收录论文全文。" },
+    "questions": { "en": "Questions", "zh": "问题" },
+    "mdNote": { "en": "These entries are not presented as peer-reviewed publications.", "zh": "这些条目不作为经过同行评审的出版物呈现。" },
+    "back": { "en": "Research", "zh": "研究" },
+    "readMd": { "en": "Read as Markdown", "zh": "以 Markdown 阅读" },
+    "metadata": { "en": "Research metadata", "zh": "研究元数据" }
+  },
+  "projects": {
+    "inProgress": { "en": "In progress", "zh": "进行中" },
+    "abstractSoon": { "en": "Abstract coming soon", "zh": "摘要待补充" },
+    "abstractSoonSentence": { "en": "Abstract coming soon.", "zh": "摘要即将补充。" },
+    "statusTopic": { "en": "topic not yet determined", "zh": "题目尚未确定" },
+    "statusMentor": { "en": "mentor not yet confirmed", "zh": "指导教师尚未确认" },
+    "statusAbstract": { "en": "abstract coming soon", "zh": "摘要待补充" },
+    "notDetermined": { "en": "Not yet determined", "zh": "尚未确定" },
+    "notConfirmed": { "en": "Not yet confirmed", "zh": "尚未确认" },
+    "topicDeveloping": { "en": "The topic is being developed.", "zh": "选题仍在形成中。" },
+    "followUp": { "en": "A title and abstract will be added once the research question is defined.", "zh": "研究问题明确后，将补充题目与摘要。" },
+    "areaLabelNote": { "en": "The heading identifies the area of coursework, rather than a finalized paper title.", "zh": "这是一个研究领域标签，而非确定的论文题目。" },
+    "course": { "en": "Course", "zh": "课程" },
+    "stage": { "en": "Stage", "zh": "阶段" },
+    "topic": { "en": "Paper topic", "zh": "论文题目" },
+    "mentor": { "en": "Mentor", "zh": "指导教师" },
+    "publication": { "en": "Publication status", "zh": "发表状态" },
+    "abstract": { "en": "Abstract", "zh": "摘要" },
+    "type": { "en": "Type", "zh": "类型" },
+    "workType": { "en": "Work type", "zh": "类型" },
+    "period": { "en": "Period", "zh": "时间" },
+    "context": { "en": "Context", "zh": "课程" },
+    "instructor": { "en": "Instructor", "zh": "任课教师" },
+    "question": { "en": "The question", "zh": "研究问题" },
+    "scope": { "en": "Scope", "zh": "范围" },
+    "aboutSummary": { "en": "About this summary", "zh": "关于本摘要" }
+  },
+  "about": {
+    "title": { "en": "About & CV", "zh": "关于我与简历" },
+    "heading": { "en": "About & CV", "zh": "关于我" },
+    "eyebrow": { "en": "Background & academic work", "zh": "背景与学术训练" },
+    "downloadCv": { "en": "Download short CV", "zh": "英文简历" },
+    "otherLanguage": { "en": "中文简介", "zh": "English version" },
+    "education": { "en": "Education", "zh": "教育背景" },
+    "interests": { "en": "Research interests", "zh": "研究兴趣" },
+    "training": { "en": "Academic training", "zh": "学术训练" },
+    "inProgressTerm": { "en": "In progress · {term}", "zh": "正在进行 · {term}" },
+    "completed": { "en": "Selected completed coursework", "zh": "已修课程（节选）" },
+    "papersInProgress": { "en": "Course papers in progress", "zh": "正在进行的课程论文" },
+    "fineprint": { "en": "The CV includes selected academic training, course papers in development, and previous course research.", "zh": "以上均为课程研究，网站仅提供项目摘要。" },
+    "glance": { "en": "At a glance", "zh": "简介" },
+    "contact": { "en": "Contact", "zh": "联系" },
+    "updated": { "en": "Updated", "zh": "更新" },
+    "studiesJoin": { "en": " & ", "zh": "与" },
+    "mdTitle": { "en": "About & CV — {name}", "zh": "关于我 — {name}" },
+    "mdLevel": { "en": "{role}, studying {studies}.", "zh": "{role}，主修{studies}。" },
+    "mdInProgressTerm": { "en": "In progress — {term}", "zh": "正在进行 — {term}" },
+    "courseInProgress": { "en": "{code}: {title} ({term}; in progress)", "zh": "{code}：{title}（{term}；进行中）" },
+    "courseCompleted": { "en": "{code}: {title} ({term}; completed)", "zh": "{code}：{title}（{term}；已完成）" },
+    "cvPdf": { "en": "Short CV PDF", "zh": "英文简历 PDF" },
+    "schemaName": { "en": "About {name}", "zh": "关于 {name}" }
+  },
+  "leadership": {
+    "eyebrow": { "en": "Academic community", "zh": "学术共同体" },
+    "lead": { "en": "Student leadership and editorial service at UC Berkeley.", "zh": "在加州大学伯克利分校参与学生组织与学术编辑工作。" },
+    "website": { "en": "Website", "zh": "网站" }
+  },
+  "copyright": {
+    "legalCode": { "en": "Legal code", "zh": "法律文本" },
+    "mit": { "en": "MIT license", "zh": "MIT 许可" },
+    "scope": { "en": "Content license scope", "zh": "内容许可范围" },
+    "scopeShort": { "en": "Scope", "zh": "范围" }
+  },
+  "notes": {
+    "title": { "en": "Reading Notes", "zh": "阅读笔记" },
+    "all": { "en": "All reading notes", "zh": "全部笔记" },
+    "topics": { "en": "Browse by subject", "zh": "按主题浏览" },
+    "intro": { "en": "Reading and study notes across political economy, history, literature, and mathematics.", "zh": "政治经济、历史、文学与数学中的阅读与学习记录。" },
+    "eyebrow": { "en": "Reading & study", "zh": "阅读与学习" },
+    "allLead": { "en": "The public reading catalog, organized by subject.", "zh": "按主题排列的公开阅读目录。" },
+    "preparing": { "en": "Reading editions in preparation", "zh": "公开阅读版正在整理中" },
+    "emptyText": { "en": "Full notes will be added to the catalog after content and layout review.", "zh": "完整笔记将在内容与排版核对后加入目录。" },
+    "scope": { "en": "Organized by subject. Each entry links to a complete reading file; collections include the individual readings listed below. Drive reading files are available to berkeley.edu accounts with the link.", "zh": "笔记按主题归类，各条目提供完整阅读档；集合条目列出所含各篇笔记。Drive 阅读档向持有链接的 berkeley.edu 账号开放查看。" },
+    "count": { "en": "{n} reading entries", "zh": "{n} 个阅读条目" },
+    "countOne": { "en": "{n} reading entry", "zh": "{n} 个阅读条目" },
+    "edition": { "en": "Reading edition", "zh": "阅读版" },
+    "readFull": { "en": "Read full note", "zh": "阅读全文" },
+    "readDrive": { "en": "Read in Google Drive", "zh": "在 Google Drive 阅读" },
+    "originalDocx": { "en": "Original DOCX", "zh": "原始 DOCX" },
+    "included": { "en": "Included readings", "zh": "所含笔记" },
+    "catalogLabel": { "en": "Notes catalog", "zh": "笔记目录" },
+    "jumpLabel": { "en": "Jump to subject", "zh": "跳转到主题" },
+    "subjectLabel": { "en": "Subject navigation", "zh": "主题导航" },
+    "catalogHeading": { "en": "Reading catalog", "zh": "阅读目录" }
+  },
+  "poetics": {
+    "notes": { "en": "Notes", "zh": "筆記" },
+    "category": { "en": "Poetics and Comparative Literature", "zh": "詩學與比較文學" },
+    "handout": { "en": "Seminar handout", "zh": "課程講義" },
+    "downloadPdf": { "en": "Download full PDF", "zh": "下載完整 PDF" },
+    "downloadDocx": { "en": "Download original DOCX", "zh": "下載原始 DOCX" },
+    "toc": { "en": "On this page", "zh": "本文目錄" },
+    "footnotes": { "en": "Notes", "zh": "腳注" },
+    "backToText": { "en": "Back to text", "zh": "返回正文" },
+    "edition": { "en": "Reading edition", "zh": "閱讀版" },
+    "mdDocx": { "en": "Original DOCX", "zh": "原始 DOCX" }
+  },
+  "notFound": {
+    "title": { "en": "Page not found", "zh": "页面未找到" },
+    "heading": { "en": "Page not found.", "zh": "页面未找到。" },
+    "lead": { "en": "The page may have moved.", "zh": "该页面可能已被移动。" },
+    "home": { "en": "Return home →", "zh": "返回首页 →" }
+  }
+}

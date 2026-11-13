@@ -3,15 +3,17 @@ name: Deploy static site
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
+# Least privilege by default; only the deploy job may publish.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
+# A pull-request run must never cancel a production deployment.
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
   cancel-in-progress: true
 
 jobs:
@@ -20,27 +22,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install PDF dependency
-        run: python -m pip install --disable-pip-version-check reportlab
-      - name: Build site
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install CV dependency
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Generate CV, build site, run checks
         env:
           SITE_ORIGIN: https://sirunwang.com
           SITE_BASE: /
-        run: |
-          python scripts/make_cv.py
-          npm run build
-          npm run check
+        run: npm run verify
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -19,7 +19,3 @@ Correct typos and broken encodings; normalize headings, citations, punctuation, 
 ## Versions and publication
 
 Keep local originals unchanged. Maintain a source-to-public change log. Do not treat upload dates as substantive revision dates. A public reading file must be reviewed for faithful content and rendering before it is linked from the website or shared publicly. Directory selection does not approve a newly rewritten substitute.
-
-## Drive cleanup
-
-The 14 archive files previously classified Keep Private are to be removed from active Google Drive storage using Trash. The three unapproved condensed PDFs are withdrawn and removed as well. Proposed-public originals remain. Local originals, local snapshots, and local review records remain available.

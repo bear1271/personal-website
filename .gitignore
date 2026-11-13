@@ -2,3 +2,6 @@ dist/
 qa/
 local/
 *.log
+.venv/
+__pycache__/
+node_modules/
