@@ -193,7 +193,8 @@ nav a[aria-current="page"] {
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
 .footer a {
@@ -562,7 +563,7 @@ nav a[aria-current="page"] {
   margin-bottom: 15px;
 }
 
-.question-grid h3 {
+.question-grid h2 {
   font-family: var(--display);
   font-size: 23px;
 }

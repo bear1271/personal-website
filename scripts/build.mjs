@@ -49,7 +49,8 @@ try {
   throw new Error("public/cv.pdf is missing. Generate it first with `npm run cv` (needs: pip install -r requirements.txt).");
 }
 
-await rm(out, { recursive: true, force: true });
+// Retries ride out Windows briefly locking a file (antivirus, indexers) while dist/ is being replaced.
+await rm(out, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
 await mkdir(out, { recursive: true });
 // Unreviewed note sources must never be deployed; scripts/check.mjs enforces the same rule.
 const unreviewed = ["html", "library"].map((name) => path.join(root, "public", "notes", name));

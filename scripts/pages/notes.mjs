@@ -32,17 +32,19 @@ function catalogPages(v, { entries, groups }) {
   const count = (n) => t(n === 1 ? "notes.countOne" : "notes.count", { n });
   // Site-hosted editions exist in both languages; Drive files are language-neutral.
   const href = (note) => (note.hosting === "site" ? v.r(note.href) : note.href);
+  // A site-hosted edition may also have a Drive copy (content/drive-links.json).
+  const driveOf = (note) => v.ctx.driveLinks[note.id];
   const meta = (note) => `${note.type} · ${note.language} · ${note.format || "PDF"}`;
 
   const empty = html`<div class="notes-empty"><h2>${status}</h2><p>${t("notes.emptyText")}</p></div>`;
   const card = (note) =>
-    html`<article class="research-note"><p class="note-meta">${meta(note)}</p><h2><a href="${href(note)}">${note.title}</a></h2><p class="note-abstract">${note.abstract}</p><p class="note-meta note-edition">${t("notes.edition")} · ${note.edition_date} · <a href="${href(note)}">${note.hosting === "site" ? t("notes.readFull") : t("notes.readDrive")} ↗</a>${note.original ? html` · <a href="${note.original}" download>${t("notes.originalDocx")} ↓</a>` : ""}</p>${note.contents?.length ? html`<details><summary>${t("notes.included")} (${note.contents.length})</summary><ul>${note.contents.map((item) => html`<li>${item.title}</li>`)}</ul></details>` : ""}</article>`;
+    html`<article class="research-note"><p class="note-meta">${meta(note)}</p><h2><a href="${href(note)}">${note.title}</a></h2><p class="note-abstract">${note.abstract}</p><p class="note-meta note-edition">${t("notes.edition")} · ${note.edition_date} · <a href="${href(note)}">${note.hosting === "site" ? t("notes.readFull") : t("notes.readDrive")} ↗</a>${driveOf(note) ? html` · <a href="${driveOf(note).href}">${t("notes.readDrive")} ↗</a>` : ""}${note.original ? html` · <a href="${note.original}" download>${t("notes.originalDocx")} ↓</a>` : ""}</p>${note.contents?.length ? html`<details><summary>${t("notes.included")} (${note.contents.length})</summary><ul>${note.contents.map((item) => html`<li>${item.title}</li>`)}</ul></details>` : ""}</article>`;
   const list = (group) =>
     group.entries.length
       ? html`<ul class="notes-list">${group.entries.map((note) => html`<li><a href="${href(note)}">${note.title}</a><span>${meta(note)}</span></li>`)}</ul>`
       : html`<p class="notes-preparing">${status}</p>`;
   const mdList = (group) =>
-    group.entries.length ? group.entries.map((note) => `- [${note.title}](${href(note)}) — ${note.type}, ${note.language}, ${note.format || "PDF"}\n  ${note.abstract}`).join("\n") : status;
+    group.entries.length ? group.entries.map((note) => `- [${note.title}](${href(note)}) — ${note.type}, ${note.language}, ${note.format || "PDF"}\n  ${note.abstract}${driveOf(note) ? ` [${t("notes.readDrive")}](${driveOf(note).href})` : ""}`).join("\n") : status;
   const current = (flag) => (flag ? raw(' aria-current="page"') : "");
   const navigation = (which) =>
     html`<nav class="notes-navigation" aria-label="${t("notes.catalogLabel")}"><a href="${root}"${current(which === "topics")}>${topics}</a><a href="${root}all/"${current(which === "all")}>${all}</a></nav>`;

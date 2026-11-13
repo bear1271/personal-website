@@ -7,7 +7,7 @@ const readJson = async (...parts) => JSON.parse(await readFile(path.join(...part
 
 export async function loadContext(root, env = process.env) {
   const content = (name) => readJson(root, "content", name);
-  const [site, ui, profile, agents, licensing, notes, categories] = await Promise.all([
+  const [site, ui, profile, agents, licensing, notes, categories, driveLinks] = await Promise.all([
     content("site.json"),
     content("ui.json"),
     content("profile.json"),
@@ -15,6 +15,7 @@ export async function loadContext(root, env = process.env) {
     content("licensing.json"),
     content("public-note-editions.json"),
     content("notes-categories.json"),
+    content("drive-links.json"),
   ]);
   const poeticsDir = path.join(root, "content/poetics");
   const poetics = await Promise.all(
@@ -35,6 +36,7 @@ export async function loadContext(root, env = process.env) {
     licensing,
     notes,
     categories,
+    driveLinks, // optional Google Drive copies of site-hosted notes, keyed by note id
     poetics,
     origin,
     basePath,

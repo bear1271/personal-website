@@ -155,7 +155,9 @@
     "footnotes": { "en": "Notes", "zh": "腳注" },
     "backToText": { "en": "Back to text", "zh": "返回正文" },
     "edition": { "en": "Reading edition", "zh": "閱讀版" },
-    "mdDocx": { "en": "Original DOCX", "zh": "原始 DOCX" }
+    "mdDocx": { "en": "Original DOCX", "zh": "原始 DOCX" },
+    "drive": { "en": "Read in Google Drive (berkeley.edu accounts)", "zh": "在 Google Drive 閱讀（僅限 berkeley.edu 帳號）" },
+    "mdDrive": { "en": "Google Drive (berkeley.edu accounts)", "zh": "Google Drive（僅限 berkeley.edu 帳號）" }
   },
   "notFound": {
     "title": { "en": "Page not found", "zh": "页面未找到" },

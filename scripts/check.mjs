@@ -9,12 +9,13 @@ import { createTranslator, resolve } from "./lib/i18n.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "dist");
 const readJson = async (file) => JSON.parse(await readFile(path.join(root, file), "utf8"));
-const [site, ui, source, manifest, categories] = await Promise.all([
+const [site, ui, source, manifest, categories, driveLinks] = await Promise.all([
   readJson("content/site.json"),
   readJson("content/ui.json"),
   readJson("content/profile.json"),
   readJson("content/public-note-editions.json"),
   readJson("content/notes-categories.json"),
+  readJson("content/drive-links.json"),
 ]);
 const origin = (process.env.SITE_ORIGIN || site.origin).replace(/\/$/, "");
 const basePath = (process.env.SITE_BASE ?? site.basePath).replace(/\/$/, "");
@@ -26,15 +27,16 @@ const check = (ok, message) => { if (!ok) failures.push(message); };
 const exists = async (file) => { try { await stat(file); return true; } catch { return false; } };
 
 // ---- inventory ---------------------------------------------------------------------------
-const files = [];
-async function walk(dir) {
+async function listFiles(dir, base = dir) {
+  const found = [];
   for (const item of await readdir(dir, { withFileTypes: true })) {
     const full = path.join(dir, item.name);
-    if (item.isDirectory()) await walk(full);
-    else files.push(path.relative(out, full).split(path.sep).join("/"));
+    if (item.isDirectory()) found.push(...(await listFiles(full, base)));
+    else found.push(path.relative(base, full).split(path.sep).join("/"));
   }
+  return found;
 }
-await walk(out);
+const files = await listFiles(out);
 const TEXT = /\.(html|md|json|txt|xml|css|svg)$/;
 const text = new Map();
 for (const rel of files) if (TEXT.test(rel)) text.set(rel, await readFile(path.join(out, rel), "utf8"));
@@ -59,6 +61,17 @@ const ids = (route) => {
 const cssText = text.get("style.css") ?? "";
 const cssClasses = new Set([...cssText.matchAll(/\.([a-zA-Z][\w-]*)/g)].map((m) => m[1]));
 const PRIVATE = [/Student ID|\bSID\b/i, /Expected (?:Spring|Summer|Fall|Winter) \d{4}/, /file:\/\//, /[A-Za-z]:\\{1,2}[A-Za-z]/, /\/Users\/[A-Za-z0-9_.-]+/];
+const editionYear = Number(source.updated.slice(0, 4));
+// Best-effort tripwire for a graduation date (the site deliberately states none). A "Class of <year>" from this
+// edition onward, or a term more than a year ahead of it, is far more likely a graduation date than a course.
+// The value is never printed: CI logs of a public repository are public.
+const graduationLike = (body) =>
+  [...body.matchAll(/\bclass of\s+(\d{4})\b/gi)].some((m) => Number(m[1]) >= editionYear) ||
+  [...body.matchAll(/\b(?:Spring|Summer|Fall|Winter)\s+(\d{4})\b/g)].some((m) => Number(m[1]) >= editionYear + 2);
+function scanPrivate(label, body) {
+  for (const pattern of PRIVATE) check(!pattern.test(body), `${label}: matches private-material pattern ${pattern}`);
+  check(!graduationLike(body), `${label}: looks like a graduation date ("Class of" year, or a term two or more years after the edition); the site states none`);
+}
 const references = new Set();
 const addReference = (value) => {
   const target = value.split("#")[0].split("?")[0];
@@ -218,6 +231,25 @@ for (const note of manifest) {
     check(all.includes(`href="${link}"`) && group.includes(`href="${link}"`), `${label}: not listed (or wrong language link) on ${prefix}/notes/`);
   }
 }
+// Optional Drive copies of site-hosted editions (content/drive-links.json). The file is hand-edited, so be strict:
+// only real site-hosted ids, a drive.google.com file link, access limited to berkeley.edu and verified, and the
+// link actually shown on both language editions and on the subject page.
+const escapeAttr = (value) => value.replace(/&/g, "&amp;");
+const siteNotes = new Map(manifest.filter((n) => n.hosting === "site").map((n) => [n.id, n]));
+for (const [id, drive] of Object.entries(driveLinks)) {
+  const label = `drive-links.json "${id}"`;
+  check(siteNotes.has(id), `${label}: not a site-hosted note in the manifest`);
+  let link;
+  try { link = new URL(drive.href); } catch { check(false, `${label}: invalid URL`); continue; }
+  check(link.hostname === "drive.google.com" && /^\/file\/d\/[\w-]+\/view$/.test(link.pathname), `${label}: not a drive.google.com /file/d/<id>/view link`);
+  check(drive.access === "berkeley-domain" && drive.access_domain === "berkeley.edu", `${label}: access must be berkeley-domain / berkeley.edu`);
+  check(drive.access_verified === true, `${label}: access has not been verified`);
+  const shown = `href="${escapeAttr(drive.href)}"`;
+  for (const prefix of ["", "/zh"]) {
+    check((pages.get(`${prefix}${siteNotes.get(id)?.href}`) ?? "").includes(shown), `${prefix}${siteNotes.get(id)?.href}: Drive link missing`);
+    check((pages.get(`${prefix}/notes/${siteNotes.get(id)?.categoryId}/`) ?? "").includes(shown), `${prefix}/notes/${siteNotes.get(id)?.categoryId}/: Drive link missing`);
+  }
+}
 for (const category of categories) {
   for (const prefix of ["", "/zh"]) {
     check(pages.has(`${prefix}/notes/${category.id}/`), `${prefix}/notes/${category.id}/: subject page missing`);
@@ -230,11 +262,15 @@ check(![...files].some((f) => /^notes\/(?:html|library)\//.test(f)), "unreviewed
 const emails = new Set([en.email]);
 for (const [rel, body] of text) {
   if (/review-notes|make_cv|profile\.json\.bak|academic_record/.test(rel)) check(false, `internal source leaked: ${rel}`);
-  for (const pattern of PRIVATE) check(!pattern.test(body), `${rel}: matches private-material pattern ${pattern}`);
-  for (const m of body.matchAll(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g)) check(emails.has(m[0]), `${rel}: unexpected email address ${m[0]}`);
+  scanPrivate(rel, body);
+  for (const m of body.matchAll(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g)) check(emails.has(m[0]), `${rel}: unexpected email address (value not printed)`);
   if (rel.endsWith(".md") || rel === "llms.txt") for (const m of body.matchAll(/\]\((\/[^)\s]*)\)/g)) addReference(m[1]);
   for (const m of body.matchAll(new RegExp(`${origin.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}${basePath}(/[^\\s"')<>]*)`, "g"))) addReference(m[1]);
   if (rel.endsWith(".css")) for (const m of body.matchAll(/url\(["']?([^"')]+)/g)) addReference(m[1]);
+}
+// The repository is public, so unrendered fields in content/ are as public as the pages.
+for (const rel of await listFiles(path.join(root, "content"))) {
+  if (/\.(json|txt)$/.test(rel)) scanPrivate(`content/${rel}`, await readFile(path.join(root, "content", rel), "utf8"));
 }
 const ALWAYS = new Set(["CNAME", "robots.txt"]);
 for (const rel of files) {

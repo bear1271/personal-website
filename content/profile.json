@@ -10,7 +10,7 @@
     { "en": "Applied Mathematics", "zh": "应用数学" }
   ],
   "email": "greenw@berkeley.edu",
-  "updated": "2026-10-29",
+  "updated": "2026-11-13",
   "portraitAlt": { "en": "Portrait of Green (Sirun) Wang", "zh": "王思润（Green Wang）的肖像" },
   "bio": { "en": "I am an undergraduate at UC Berkeley studying political economy and applied mathematics. I study how institutions organize collective production and shape how people understand the sources of its success.", "zh": "加州大学伯克利分校本科生，主修政治经济与应用数学。关注制度如何组织共同生产，以及人们如何理解组织成果的来源。" },
   "approach": { "en": "My current work explores two related questions: how institutions develop productive capacity, and how they shape people's interpretations of that capacity. I am especially interested in how people attribute contributions, judge whether a leader or organization is replaceable, and form beliefs about alternatives they cannot directly observe. I am learning to use formal models to make these mechanisms precise, while taking historical settings and the limits of each representation seriously. How institutions reshape people's standards of value remains a longer-term question.", "zh": "我围绕两个相关问题展开工作：制度如何形成生产能力，以及制度如何影响人们对这种能力的解释。\n\n我想弄清的是：人们如何归因不同个体的贡献；如何判断一位领导者、一个组织是否可被替代；以及，当替代方案无从直接观察时，信念从何而来。\n\n我用形式模型厘清机制，而将历史情境与模型表述的边界视为同样严肃的约束。\n\n再退一步，我想问的是：制度何时改变人们的价值尺度。" },
@@ -165,8 +165,8 @@
       "publicationStatus": { "en": "Not listed as a publication", "zh": "不列为学术发表" },
       "availability": { "en": "Project summary only; manuscript not included in this edition.", "zh": "网站仅提供项目摘要，未提供论文全文。" },
       "area": { "en": "Development & political economy", "zh": "发展与政治经济" },
-      "description": { "en": "A course research project examining the drivers of Bangladesh’s transition toward market-oriented policy and the role of party-state institutions.", "zh": "关注市场导向政策转型及政党—国家制度。" },
-      "question": { "en": "What drove Bangladesh’s shift toward market-oriented policy in 1991?", "zh": "什么推动了孟加拉国在 1991 年转向市场导向政策？" },
+      "description": { "en": "A course research project examining the drivers of Bangladesh's transition toward market-oriented policy and the role of party-state institutions.", "zh": "关注市场导向政策转型及政党—国家制度。" },
+      "question": { "en": "What drove Bangladesh's shift toward market-oriented policy in 1991?", "zh": "什么推动了孟加拉国在 1991 年转向市场导向政策？" },
       "context": "Development and Globalization, UC Berkeley",
       "instructor": "Edwin Lin",
       "scope": { "en": "Policy transition and party-state institutions in Bangladesh.", "zh": "孟加拉国的政策转型与政党—国家制度。" },
@@ -211,7 +211,7 @@
       "startDate": "2026-06",
       "endDate": null,
       "period": "June 2026 – present",
-      "url": "https://datong.studentorg.berkeley.edu/",
+      "url": "https://datong.studentorg.berkeley.edu/home",
       "detail": { "en": "Previously a member, September 2025 – June 2026.", "zh": "此前为成员（2025 年 9 月 – 2026 年 6 月）。" },
       "showOnLeadership": true
     },

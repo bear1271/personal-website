@@ -17,11 +17,12 @@ function markdownText(block) {
 
 function edition(v, e) {
   const { t, r } = v;
+  const drive = v.ctx.driveLinks[e.id]; // optional Google Drive copy (content/drive-links.json)
   let section = 0;
   const toc = e.blocks.filter((b) => b.kind === "h2").map((b, i) => html`<li><a href="#section-${i}">${b.text}</a></li>`);
   const blocks = e.blocks.map((b) =>
     b.kind === "image"
-      ? html`<figure><img src="${b.src}" alt="${b.alt}"><figcaption>${b.alt}</figcaption></figure>`
+      ? html`<figure><img src="${b.src}" alt="${b.alt}"${b.width ? raw(` width="${b.width}" height="${b.height}"`) : ""}><figcaption>${b.alt}</figcaption></figure>`
       : b.kind === "h2"
         ? html`<h2 id="section-${section++}">${raw(b.html)}</h2>`
         : html`<p>${raw(b.html)}</p>`,
@@ -29,11 +30,11 @@ function edition(v, e) {
   const footnotes = e.footnotes.length
     ? html`<section class="poetics-footnotes"><h2>${t("poetics.footnotes")}</h2><ol>${e.footnotes.map((n) => html`<li id="fn-${n.id}" value="${n.id}">${n.text} <a href="#ref-${n.id}" aria-label="${t("poetics.backToText")}">↩</a></li>`)}</ol></section>`
     : "";
-  const body = html`<div class="notes-breadcrumb"><a href="${r("/notes/")}">${t("poetics.notes")}</a><span>/</span><a href="${r("/notes/poetics-comparative-literature/")}">${t("poetics.category")}</a></div><div class="page-head poetics-head"><p class="eyebrow">${e.author} · ${e.course} · ${t("poetics.handout")}</p><h1>${e.title}</h1><p class="lead">${e.abstract}</p><a href="/notes/poetics/${e.id}.pdf">${t("poetics.downloadPdf")} ↓</a> · <a href="/notes/poetics/${e.id}.docx" download>${t("poetics.downloadDocx")} ↓</a></div><div class="poetics-layout"><nav class="poetics-toc" aria-label="${t("poetics.toc")}"><p class="eyebrow">${t("poetics.toc")}</p><ol>${toc}</ol></nav><article class="poetics-body" lang="zh-Hant"><p class="poetics-editorial">${e.editorial_note}</p>${raw(blocks.map(String).join("\n"))}${footnotes}<p class="poetics-editorial">${e.attribution_note}</p><p class="note-meta">${t("poetics.edition")} · ${e.edition_date}</p></article></div>`;
+  const body = html`<div class="notes-breadcrumb"><a href="${r("/notes/")}">${t("poetics.notes")}</a><span>/</span><a href="${r("/notes/poetics-comparative-literature/")}">${t("poetics.category")}</a></div><div class="page-head poetics-head"><p class="eyebrow">${e.author} · ${e.course} · ${t("poetics.handout")}</p><h1>${e.title}</h1><p class="lead">${e.abstract}</p><a href="/notes/poetics/${e.id}.pdf">${t("poetics.downloadPdf")} ↓</a> · <a href="/notes/poetics/${e.id}.docx" download>${t("poetics.downloadDocx")} ↓</a>${drive ? html` · <a href="${drive.href}">${t("poetics.drive")} ↗</a>` : ""}</div><div class="poetics-layout"><nav class="poetics-toc" aria-label="${t("poetics.toc")}"><p class="eyebrow">${t("poetics.toc")}</p><ol>${toc}</ol></nav><article class="poetics-body" lang="zh-Hant"><p class="poetics-editorial">${e.editorial_note}</p>${raw(blocks.map(String).join("\n"))}${footnotes}<p class="poetics-editorial">${e.attribution_note}</p><p class="note-meta">${t("poetics.edition")} · ${e.edition_date}</p></article></div>`;
   const md = mdJoin(
     `# ${e.title}`,
     `${e.author} · ${e.course}`,
-    `[PDF](/notes/poetics/${e.id}.pdf) · [${t("poetics.mdDocx")}](/notes/poetics/${e.id}.docx)`,
+    `[PDF](/notes/poetics/${e.id}.pdf) · [${t("poetics.mdDocx")}](/notes/poetics/${e.id}.docx)${drive ? ` · [${t("poetics.mdDrive")}](${drive.href})` : ""}`,
     e.editorial_note,
     e.blocks.map((b) => (b.kind === "image" ? `![${b.alt}](${b.src})` : (b.kind === "h2" ? "## " : "") + markdownText(b))),
     e.footnotes.length ? [`## ${t("poetics.footnotes")}`, e.footnotes.map((n) => `[^${n.id}]: ${n.text}`)] : [],

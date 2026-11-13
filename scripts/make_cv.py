@@ -1,7 +1,9 @@
 """Generate the short public CV from the same source as the website.
 
 Needs reportlab (pinned in requirements.txt):  python -m pip install -r requirements.txt
-The output is byte-stable (invariant=1): it changes only when the profile content changes.
+The creation date and file ID are fixed (invariant=1), so repeated runs on one machine give identical
+bytes and git shows a change only when the profile content changes. Another platform may compress the
+same pages a few bytes differently (zlib), so do not compare the PDF byte-for-byte across machines.
 """
 import json
 import sys

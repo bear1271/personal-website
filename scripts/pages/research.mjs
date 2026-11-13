@@ -8,7 +8,7 @@ function indexPage(v) {
   const body = html`
 <div class="page-head"><p class="eyebrow">${t("research.eyebrow")}</p><h1>${t("nav.research")}</h1><p class="lead">${p.researchLead}</p></div>
 <div class="research-intro">${paragraphs(p.approach)}</div>
-<div class="question-grid">${p.questions.map((q, i) => html`<div><div class="question-number">0${i + 1}</div><h3>${q.title}</h3><p>${q.question}</p></div>`)}</div>
+<div class="question-grid">${p.questions.map((q, i) => html`<div><div class="question-number">0${i + 1}</div><h2>${q.title}</h2><p>${q.question}</p></div>`)}</div>
 <section class="section"><div class="section-head"><h2>${t("research.inProgress")}</h2><span class="tag">${unique(p.ongoingProjects.map((x) => v.term(x.period))).join(", ")}</span></div>${p.ongoingProjects.map((x) => ongoingCard(v, x))}</section>
 <section class="section page-bottom"><div class="section-head"><h2>${t("research.selected")}</h2><span class="tag">${unique(p.projects.map((x) => x.startDate.slice(0, 4))).join(", ")}</span></div>${p.projects.map((x) => courseCard(v, x))}<p class="fineprint">${t("research.courseNote")}</p></section>`;
   const md = mdJoin(

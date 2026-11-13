@@ -31,6 +31,7 @@ export function renderDocument(ctx, page) {
     email: `mailto:${p.email}`,
     affiliation: { "@type": "CollegeOrUniversity", name: p.institution },
     knowsAbout: p.interests,
+    sameAs: p.links.map((link) => link.url),
   };
   const entity = page.schema ?? {
     "@type": "WebPage",
@@ -62,7 +63,7 @@ ${peer ? html`<link rel="alternate" hreflang="${HTML_LANG[v.other]}" href="${ctx
 <body><a class="skip" href="#main">${t("layout.skip")}</a><div class="container">
 <header class="header"><a class="brand" href="${r("/")}">${p.shortName}<span aria-hidden="true"> / </span></a><div class="header-actions"><nav aria-label="${t("layout.navLabel")}">${nav}</nav>${languageSwitch}</div></header>
 <main id="main">${page.body}</main>
-<footer class="footer"><span>© ${ctx.site.copyrightYear} ${p.name} <span aria-hidden="true">·</span> ${t("layout.updated")} <time datetime="${ctx.updated}">${v.date(ctx.updated, "short")}</time></span><div class="footer-links">${footerLinks}<a href="mailto:${p.email}">${t("layout.email")} ↗</a></div></footer>
+<footer class="footer"><span>© ${ctx.site.copyrightYear} ${p.name} <span aria-hidden="true">·</span> ${t("layout.updated")} <time datetime="${ctx.updated}">${v.date(ctx.updated, "short")}</time></span><div class="footer-links">${footerLinks}<a href="mailto:${p.email}">${t("layout.email")} ↗</a>${p.links.map((link) => html`<a href="${link.url}" rel="me noopener">${link.label} ↗</a>`)}</div></footer>
 </div></body></html>`;
   return rebase(ctx, String(document), "html");
 }
