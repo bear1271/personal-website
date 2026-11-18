@@ -124,7 +124,7 @@
     "mathTitle": { "en": "Math 104 Real Analysis Notes", "zh": "Math 104 实分析笔记" },
     "mathMeta": { "en": "UC Berkeley · Fall 2026", "zh": "加州大学伯克利分校 · 2026 年秋季" },
     "mathDetail": { "en": "A concept index, proof-reading notes, and exercises that unpack where assumptions enter key arguments in real analysis.", "zh": "包含概念索引、证明阅读笔记和练习，标出实分析关键论证中各项假设具体用在哪一步。" },
-    "mathUrl": { "en": "https://github.com/bear1271/math-104-notes", "zh": "https://github.com/bear1271/math-104-notes" },
+    "mathUrl": { "en": "https://bear1271.github.io/math-104-notes/", "zh": "https://bear1271.github.io/math-104-notes/" },
     "boardTitle": { "en": "Three Board Games", "zh": "三棋对弈" },
     "boardMeta": { "en": "Chess · Xiangqi · Gomoku", "zh": "国际象棋 · 象棋 · 五子棋" },
     "boardDetail": { "en": "Play chess, xiangqi or gomoku against an AI at seven difficulty levels, from a novice that hangs pieces to full-strength Stockfish. The xiangqi and gomoku engines are written from scratch; the chess AI is Stockfish compiled to WebAssembly.", "zh": "和 AI 下国际象棋、象棋或五子棋，七档难度，从会丢子的新手到全力的 Stockfish。象棋和五子棋的 AI 是从头写的，国际象棋的 AI 是编译成 WebAssembly 的 Stockfish。" },
