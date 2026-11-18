@@ -12,6 +12,7 @@
     "research": { "en": "Research", "zh": "研究" },
     "notes": { "en": "Notes", "zh": "笔记" },
     "leadership": { "en": "Leadership", "zh": "组织与服务" },
+    "games": { "en": "Games", "zh": "游戏" },
     "about": { "en": "About / CV", "zh": "关于 / 简历" }
   },
   "footer": {
@@ -116,6 +117,17 @@
     "eyebrow": { "en": "Academic community", "zh": "学术共同体" },
     "lead": { "en": "Student leadership and editorial service at UC Berkeley.", "zh": "在加州大学伯克利分校参与学生组织与学术编辑工作。" },
     "website": { "en": "Website", "zh": "网站" }
+  },
+  "games": {
+    "eyebrow": { "en": "Side projects", "zh": "课余项目" },
+    "lead": { "en": "Small browser games built to learn how game-playing AI works. Everything runs in your browser.", "zh": "为了了解下棋 AI 怎么工作而做的小游戏，全部在浏览器里运行。" },
+    "boardTitle": { "en": "Three Board Games", "zh": "三棋对弈" },
+    "boardMeta": { "en": "Chess · Xiangqi · Gomoku", "zh": "国际象棋 · 象棋 · 五子棋" },
+    "boardDetail": { "en": "Play chess, xiangqi or gomoku against an AI at seven difficulty levels, from a novice that hangs pieces to full-strength Stockfish. The xiangqi and gomoku engines are written from scratch; the chess AI is Stockfish compiled to WebAssembly.", "zh": "和 AI 下国际象棋、象棋或五子棋，七档难度，从会丢子的新手到全力的 Stockfish。象棋和五子棋的 AI 是从头写的，国际象棋的 AI 是编译成 WebAssembly 的 Stockfish。" },
+    "play": { "en": "Play", "zh": "开始玩" },
+    "boardUrl": { "en": "https://bear1271.github.io/board-games/?lang=en", "zh": "https://bear1271.github.io/board-games/?lang=zh" },
+    "source": { "en": "Source code", "zh": "源代码" },
+    "sourceUrl": { "en": "https://github.com/bear1271/board-games", "zh": "https://github.com/bear1271/board-games" }
   },
   "copyright": {
     "legalCode": { "en": "Legal code", "zh": "法律文本" },

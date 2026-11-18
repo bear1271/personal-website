@@ -7,6 +7,7 @@
     { "id": "research", "route": "/research/" },
     { "id": "notes", "route": "/notes/" },
     { "id": "leadership", "route": "/leadership/" },
+    { "id": "games", "route": "/games/" },
     { "id": "about", "route": "/about/" }
   ],
   "footer": [
