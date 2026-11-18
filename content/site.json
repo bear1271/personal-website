@@ -7,7 +7,7 @@
     { "id": "research", "route": "/research/" },
     { "id": "notes", "route": "/notes/" },
     { "id": "leadership", "route": "/leadership/" },
-    { "id": "games", "route": "/games/" },
+    { "id": "resources", "route": "/resources/" },
     { "id": "about", "route": "/about/" }
   ],
   "footer": [
@@ -16,6 +16,8 @@
     { "id": "agents", "route": "/for-agents/", "localized": true }
   ],
   "redirects": [
-    { "from": "/about/zh/", "to": "/zh/about/", "lang": "zh" }
+    { "from": "/about/zh/", "to": "/zh/about/", "lang": "zh" },
+    { "from": "/games/", "to": "/resources/", "lang": "en" },
+    { "from": "/zh/games/", "to": "/zh/resources/", "lang": "zh" }
   ]
 }

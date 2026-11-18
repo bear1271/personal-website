@@ -11,7 +11,7 @@ import { homePages } from "./pages/home.mjs";
 import { researchPages } from "./pages/research.mjs";
 import { aboutPages } from "./pages/about.mjs";
 import { leadershipPages } from "./pages/leadership.mjs";
-import { gamesPages } from "./pages/games.mjs";
+import { resourcesPages } from "./pages/resources.mjs";
 import { notesPages } from "./pages/notes.mjs";
 import { poeticsPages } from "./pages/poetics.mjs";
 import { agentsPages } from "./pages/agents.mjs";
@@ -26,7 +26,7 @@ const pages = [
   ...researchPages(ctx),
   ...aboutPages(ctx),
   ...leadershipPages(ctx),
-  ...gamesPages(ctx),
+  ...resourcesPages(ctx),
   ...notesPages(ctx),
   ...poeticsPages(ctx),
   ...agentsPages(ctx),
